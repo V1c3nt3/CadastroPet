@@ -64,8 +64,17 @@ public class CadastroDAO {
 
     public void atualizarCadastro(Cadastro cadastro){
         ContentValues values = new ContentValues();
+
+        //insere os valores
+        values.put("nome", cadastro.getNome());
+        values.put("especie",cadastro.getEspecie());
+        values.put("marca",cadastro.getMarca());
+        values.put("dono",cadastro.getDono());
+        values.put("tratamento",cadastro.getTratamento());
+
+        //atualiza os dados no banco após edição
         banco.update("cadastro", values,
-                "id ==?",
+                "id = ?",
                 new String[]{String.valueOf(cadastro.getId())});
     }
 }

@@ -56,6 +56,7 @@ public class Cadastro_PetActivity extends AppCompatActivity {
     public void inserirCadastro(View view) {
         if (cadastro == null){
             cadastro = new Cadastro();
+
             cadastro.setNome(campoNome.getText().toString().trim());
             cadastro.setEspecie(campoEspecie.getText().toString().trim());
             cadastro.setMarca(campoMarca.getText().toString().trim());
